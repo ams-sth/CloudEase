@@ -9,6 +9,7 @@ import Management from "./components/Management";
 import Reviews from "./components/Reviews";
 import Pricing from "./components/Pricing";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 const App = ({ pageColor, changePageColor, greenColor, darkColor }) => {
   return (
@@ -20,6 +21,7 @@ const App = ({ pageColor, changePageColor, greenColor, darkColor }) => {
       <Management />
       <Reviews />
       <Pricing />
+      <About />
       <Footer />
       <div className="fixed bottom-4 right-4">
         <button
