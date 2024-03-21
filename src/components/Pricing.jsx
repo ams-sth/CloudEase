@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 
 const Pricing = ({ pageColor, darkColor, greenColor }) => {
   const textColorClass =
@@ -11,293 +11,158 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
     pageColor === greenColor || pageColor === darkColor
       ? "border-2 border-white"
       : "border-2 border-black";
+
   return (
-    <div className=" container">
-      <section
-        className={`bg-gradient-to-br from-${darkColor} to-${greenColor} dark:bg-${darkColor}`}
-      >
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-          <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2
-              className={`mb-4 text-4xl tracking-tight font-extrabold ${textColorClass}`}
-            >
-              Choose Your Ideal Pricing Plan for Effective Cloud Management
-            </h2>
-            <ul>
-              <li>
-                <h6 className={`font-bold ${textColorClass}`}>
-                  <FaCheckCircle className="inline-block mr-2" />
-                  Switch Plans Anytime
-                </h6>
-                <h6 className={`font-bold ${textColorClass}`}>
-                  <FaCheckCircle className="inline-block mr-2" />
-                  No Credit Card Required
-                </h6>
-                <h6 className={` font-bold ${textColorClass}`}>
-                  <FaCheckCircle className="inline-block mr-2" />
-                  Cancel Anytime
-                </h6>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-            <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-              <h3 className="mb-4 text-2xl font-semibold">Basic plan</h3>
-              <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+    <div className="container flex py-40">
+      <div>
+        <h1 className={`font-bold text-3xl max-w-2xl ${textColorClass}`}>
+          Choose Your Ideal Pricing Plan for Effective Cloud Management
+        </h1>
+        <ul className="flex space-x-10 mt-5">
+          <li className={`flex items-center ${textColorClass}`}>
+            <FaCheck className="text-green-500 mr-2" />
+            Switch Plans Anytime
+          </li>
+          <li className={`flex items-center ${textColorClass}`}>
+            <FaCheck className="text-green-500 mr-2" />
+            No Credit Card Required
+          </li>
+          <li className={`flex items-center ${textColorClass}`}>
+            <FaCheck className="text-green-500 mr-2" />
+            Cancel Anytime
+          </li>
+        </ul>
+        <div className="flex space-x-8">
+          <section className={`rounded-md mt-10 ${borderColor} max-w-sm`}>
+            <div className="p-8">
+              <h1 className={`text-3xl mt-4 ${textColorClass}`}>Basic Plan</h1>
+              <div className="flex ">
+                <h2 className={`text-2xl mt-4 ${textColorClass}`}> $58.6</h2>
+                <h2 className={`${textColorClass} mt-6 ml-1`}>/month</h2>
+              </div>
+              <p className={` max-w-xs mt-4  ${textColorClass}`}>
                 Perfect for small businesses or those getting started with cloud
                 management.
               </p>
-              <div className="flex justify-center items-baseline my-8">
-                <span className="mr-2 text-5xl font-extrabold">$58.6</span>
-                <span className="text-gray-500 dark:text-gray-400">/month</span>
-              </div>
-              <ul role="list" className="mb-8 space-y-4 text-left">
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Ultricies ut nibh purus</span>
+              <hr className={`border-t mt-4 ${borderColor}  `} />
+              <ul>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Ultricies ut nibh purus
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Malesuada feugiat fringilla</span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Malesuada feugiat fringilla
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>
-                    <span className="font-semibold">
-                      Ultricies ut nibh purus
-                    </span>
-                  </span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Ultricies ut nibh purus
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="font-semibold">
-                    Malesuada feugiat fringilla
-                  </span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Malesuada feugiat fringilla
                 </li>
               </ul>
-              <a
-                href="#"
-                className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900"
-              >
-                Get started
-              </a>
-              <span>15 Days Money-back Guarantee</span>
+              <div className="flex mt-4 justify-center">
+                <button className="py-2 px-24 bg-blue-600 rounded-md text-white">
+                  Get Started
+                </button>
+              </div>
+              <div className="flex justify-center mt-4">
+                <h1 className={`${textColorClass}`}>
+                  *15 Days Money-back Guarantee
+                </h1>
+              </div>
             </div>
-            <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-              <h3 className="mb-4 text-2xl font-semibold">Pro Plan</h3>
-              <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+          </section>
+          <section className={`rounded-md mt-10 ${borderColor} max-w-sm`}>
+            <div className="p-8">
+              <h1 className={`text-3xl mt-4 ${textColorClass}`}>Pro Plan</h1>
+              <div className="flex ">
+                <h2 className={`text-2xl mt-4 ${textColorClass}`}> $74.8</h2>
+                <h2 className={`${textColorClass} mt-6 ml-1`}>/month</h2>
+              </div>
+              <p className={` max-w-xs mt-4  ${textColorClass}`}>
                 Designed for growing businesses that require advanced cloud
                 management capabilities.
               </p>
-              <div className="flex justify-center items-baseline my-8">
-                <span className="mr-2 text-5xl font-extrabold">$74.8</span>
-                <span className="text-gray-500 dark:text-gray-400">/month</span>
-              </div>
-              <ul role="list" className="mb-8 space-y-4 text-left">
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Ultricies ut nibh purus</span>
+              <hr className={`border-t mt-4 ${borderColor}  `} />
+              <ul>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Ultricies ut nibh purus
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Malesuada feugiat fringilla</span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Malesuada feugiat fringilla
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>
-                    <span className="font-semibold">
-                      Ultricies ut nibh purus
-                    </span>
-                  </span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Ultricies ut nibh purus
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="font-semibold">
-                    Malesuada feugiat fringilla
-                  </span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Malesuada feugiat fringilla
                 </li>
               </ul>
-              <a
-                href="#"
-                className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900"
-              >
-                Get started
-              </a>
-              <span>15 Days Money-back Guarantee</span>
+              <div className="flex mt-4 justify-center">
+                <button className="py-2 px-24 bg-blue-600 rounded-md text-white">
+                  Get Started
+                </button>
+              </div>
+              <div className="flex justify-center mt-4">
+                <h1 className={`${textColorClass}`}>
+                  *15 Days Money-back Guarantee
+                </h1>
+              </div>
             </div>
-            <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-              <h3 className="mb-4 text-2xl font-semibold">Enterprise Plan</h3>
-              <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+          </section>
+          <section className={`rounded-md mt-10 ${borderColor} max-w-sm`}>
+            <div className="p-8">
+              <h1 className={`text-3xl mt-4 ${textColorClass}`}>
+                Enterprise Plan
+              </h1>
+              <div className="flex ">
+                <h2 className={`text-2xl mt-4 ${textColorClass}`}> $87.2</h2>
+                <h2 className={`${textColorClass} mt-6 ml-1`}>/month</h2>
+              </div>
+              <p className={` max-w-xs mt-4  ${textColorClass}`}>
                 Tailored for large organizations with complex cloud
                 infrastructures requirements.
               </p>
-              <div className="flex justify-center items-baseline my-8">
-                <span className="mr-2 text-5xl font-extrabold">$87.2</span>
-                <span className="text-gray-500 dark:text-gray-400">/month</span>
-              </div>
-              <ul role="list" className="mb-8 space-y-4 text-left">
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Ultricies ut nibh purus</span>
+              <hr className={`border-t mt-4 ${borderColor}  `} />
+              <ul>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Ultricies ut nibh purus
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span>Malesuada feugiat fringilla</span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Malesuada feugiat fringilla
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="font-semibold">Ultricies ut nibh purus</span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Ultricies ut nibh purus
                 </li>
-                <li className="flex items-center space-x-3">
-                  <svg
-                    className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="font-semibold">
-                    Malesuada feugiat fringilla
-                  </span>
+                <li className={`flex items-center mt-4 ${textColorClass} mb-1`}>
+                  <FaCheck className="text-green-500 mr-2" />
+                  Malesuada feugiat fringilla
                 </li>
               </ul>
-              <a
-                href="#"
-                className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900"
-              >
-                Get started
-              </a>
-              <span>15 Days Money-back Guarantee</span>
+              <div className="flex mt-4 justify-center">
+                <button className="py-2 px-24 bg-blue-600 rounded-md text-white">
+                  Get Started
+                </button>
+              </div>
+              <div className="flex justify-center mt-4">
+                <h1 className={`${textColorClass}`}>
+                  *15 Days Money-back Guarantee
+                </h1>
+              </div>
             </div>
-          </div>
+          </section>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

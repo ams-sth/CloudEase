@@ -47,9 +47,9 @@ const About = ({ pageColor, greenColor, darkColor }) => {
       <div className=" flex-grow">
         <h1 className={`text-3xl ${textColorClass}`}>Contact Info</h1>
         <ul>
-          <li className={`${textColorClass}`}>
+          <li className={`max-w-xs ${textColorClass}`}>
             Jl. Danau Tamblingan No.180, Sanur,
-            <br /> Denpasar, Bali 80222
+             Denpasar, Bali 80222
           </li>
           <li className={`${textColorClass}`}>support@domain.com</li>
           <li className={`${textColorClass}`}>(+977)887110622814</li>

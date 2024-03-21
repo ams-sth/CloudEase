@@ -11,7 +11,7 @@ const Features = ({ pageColor, greenColor, darkColor }) => {
       : "border-2 border-black";
 
   return (
-    <div className="container mx-auto">
+    <div className="container">
       <h1 className={`text-3xl font-bold mb-4 ${textColorClass}`}>
         Provide Tools and Expertise to Effectively Manage Cloud Environments
       </h1>

@@ -16,71 +16,50 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
       : "border-b border-gray-900";
 
   return (
-    <div>
-      <nav className={`p-8 ${bottomBorderColor}`}>
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center">
-            <div className="flex-shrink-0">
-              <span className={`${textColorClass} font-bold text-xl`}>
-                CloudEase
-              </span>
-            </div>
-            <div className="hidden md:block">
-              <ul className="flex space-x-4">
-                <li>
-                  <a
-                    href="#"
-                    className={`hover:text-gray-300 ${textColorClass}`}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={`hover:text-gray-300 ${textColorClass}`}
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={`hover:text-gray-300 ${textColorClass}`}
-                  >
-                    Service
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={`hover:text-gray-300 ${textColorClass}`}
-                  >
-                    Blogs
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={`hover:text-gray-300 ${textColorClass}`}
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className={`hover:text-gray-300 ${textColorClass} ${borderColor} px-4 py-2 rounded-lg`}
-                  >
-                    Get Started
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <nav className={`p-8 ${bottomBorderColor}`}>
+      <div className="container flex justify-between">
+        <div className="flex-shrink">
+          <span className={`${textColorClass} font-bold text-xl`}>
+            CloudEase
+          </span>
         </div>
-      </nav>
-    </div>
+        <ul className="flex space-x-4">
+          <li>
+            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+              Service
+            </a>
+          </li>
+          <li>
+            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+              Blogs
+            </a>
+          </li>
+          <li>
+            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+              Contact
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className={`hover:text-gray-300 ${textColorClass} ${borderColor} px-2 py-2 rounded-lg`}
+            >
+              Get Started
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 
