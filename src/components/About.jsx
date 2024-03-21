@@ -16,7 +16,7 @@ const About = ({ pageColor, greenColor, darkColor }) => {
       : "border-b border-gray-900";
 
   return (
-    <div className="flex pl-36">
+    <div className="container flex">
       <div className="flex-grow">
         <h1 className={`text-3xl ${textColorClass}`}>Navigation</h1>
         <ul className="">

@@ -21,7 +21,7 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
             <div className="flex-shrink-0">
-              <span className={`${textColorClass} font-bold text-xl`} $>
+              <span className={`${textColorClass} font-bold text-xl`}>
                 CloudEase
               </span>
             </div>
@@ -51,7 +51,6 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
                     Service
                   </a>
                 </li>
-
                 <li>
                   <a
                     href="#"

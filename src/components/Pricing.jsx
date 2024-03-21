@@ -12,7 +12,7 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
       ? "border-2 border-white"
       : "border-2 border-black";
   return (
-    <div className="flex justify-center flex-col items-center">
+    <div className=" container">
       <section
         className={`bg-gradient-to-br from-${darkColor} to-${greenColor} dark:bg-${darkColor}`}
       >

@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { FaCheckCircle } from "react-icons/fa";
 
 const Reviews = ({ pageColor, greenColor, darkColor }) => {
   const textColorClass =
@@ -9,7 +8,7 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
       : "text-black";
 
   return (
-    <div className="flex justify-center flex-col items-center">
+    <div className="flex flex-col justify-center items-center">
       <div
         className={`bg-gradient-to-br from-${darkColor} to-${greenColor} dark:bg-${darkColor}`}
       >

@@ -9,25 +9,28 @@ const Management = ({ pageColor, greenColor, darkColor }) => {
       : "text-black";
 
   return (
-    <div className="flex justify-center">
-      <div>
+    <div className="container flex">
+      <div className="">
         <h1 className={`font-bold text-3xl ${textColorClass}`}>
-          Management and Operations Capabilities to Analyze Cloud Cost
+          Management and Operations <br/>Capabilities to <br/> Analyze Cloud Cost
         </h1>
-        <p className={`${textColorClass}`}>
-          Luctus ac feugiat in sed ultrices donec vitae. Velit, amet, eget leo
-          non sit ipsum
-          <br /> venenatis eros, mi. Tempus morbi nunc placerat risus fames ac
-          integer non nam.
-          <br /> Vitae, metus pharetra sit nibh donec nunc, placerat.
-        </p>
+        <div>
+          <p className={`${textColorClass}`}>
+            Luctus ac feugiat in sed ultrices donec vitae. Velit, amet, eget leo
+            non sit ipsum
+            <br /> venenatis eros, mi. Tempus morbi nunc placerat risus fames ac
+            integer non nam.
+            <br /> Vitae, metus pharetra sit nibh donec nunc, placerat.
+          </p>
+        </div>
+
         <ul>
-          <li>
-            <h6 className={`${textColorClass}`}>
+          <li >
+            <h6 className={`mt-5 ${textColorClass}`}>
               <FaCheckCircle className="inline-block mr-2" />
               Efficiently allocate and track cloud costs
             </h6>
-            <h6 className={`${textColorClass}`}>
+            <h6 className={`mt-5 ${textColorClass}`}>
               <FaCheckCircle className="inline-block mr-2" />
               Real-time cost monitoring and reporting
             </h6>
