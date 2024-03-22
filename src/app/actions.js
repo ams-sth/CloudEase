@@ -17,3 +17,8 @@ export const changePageColor = (color) => {
     payload: color,
   };
 };
+
+export const changeImage = (index) => ({
+  type: "CHANGE_IMAGE",
+  payload: index,
+});

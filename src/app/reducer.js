@@ -1,7 +1,9 @@
 const initialState = {
-  greenColor:'#07282c',
-  darkColor:'#1f2937',
+  greenColor: "#07282c",
+  darkColor: "#1f2937",
   pageColor: "white",
+
+  currentImageIndex: 0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -23,6 +25,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         pageColor: action.payload,
       };
+
+    case "CHANGE_IMAGE":
+      return {
+        ...state,
+        currentImageIndex: action.payload,
+      };
+
     default:
       return state;
   }
