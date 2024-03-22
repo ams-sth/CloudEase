@@ -12,30 +12,30 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
       : "border-2 border-black";
 
   return (
-    <div className={`container py-40  ${textColorClass}`}>
+    <div className={`container flex py-40  ${textColorClass}`}>
       <div className="max-w-xl">
         <h1 className="text-3xl font-bold">
-          Elevate Your Cloud Management for Enhanced Efficiency{" "}
+          Elevate Your Cloud Management for Enhanced Efficiency
         </h1>
         <p className="mt-10">
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Nemo enim ipsam voluptatem.
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui
+          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+          et quas. Nemo enim ipsam voluptatem.
         </p>
-      </div>
-
-      <div className="flex flex-col sm:flex-row sm:items-center mt-10">
-        <input
-          className={`h-12 ${borderColor}`}
-          type="email"
-          placeholder="Enter your email address"
-        />
-        <button
-          className={`bg-blue-500 hover:bg-blue-700 text-white font-bold h-12 py-2 px-4 ml-2`}
-        >
-          Subscribe
-        </button>
-      </div>
-      <div className="mt-60">
-        <h1 className="">Trusted by lots of companies: </h1>
+        <div className="flex">
+          <input
+            className={`h-12 ${borderColor}`}
+            type="email"
+            placeholder="Enter your email address"
+          />
+          <button
+            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold h-12 py-2 px-4 ml-2`}
+          >
+            Subscribe
+          </button>
+        </div>
+         <div className="">
+         <h1>Trusted by lots of companies: </h1>
         <nav>
           <ul className={`flex space-x-4  ${textColorClass}`}>
             <li>
@@ -55,6 +55,11 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
             </li>
           </ul>
         </nav>
+         </div>
+       
+      </div>
+      <div>
+        <img src="/images/Image-Hero.png" />
       </div>
     </div>
   );
