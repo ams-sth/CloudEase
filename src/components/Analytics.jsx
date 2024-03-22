@@ -1,7 +1,11 @@
 import React from "react";
-import { connect, } from "react-redux";
+import { connect } from "react-redux";
 import { changeImage } from "../app/actions";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronCircleLeft,
+  faChevronCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const images = [
   "/images/Resource-195.png",
@@ -24,6 +28,10 @@ const Analytics = ({
     pageColor === greenColor || pageColor === darkColor
       ? "border-2 border-white"
       : "border-2 border-black";
+  const buttonColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "text-white"
+      : "text-black-500";
 
   const handleLeftArrowClick = () => {
     const newIndex =
@@ -37,20 +45,26 @@ const Analytics = ({
   };
 
   return (
-    <div className="container flex space-x-10 py-40">
-      <div className="flex justify-center border-2 max-w-lg">
-        <button className="arrow-btn" onClick={handleLeftArrowClick}>
-          {"<"}
-        </button>
-
-        <img className="object-fit"
-          src={images[currentImageIndex]}
-          alt={`Image ${currentImageIndex}`}
-        />
-        <button className="arrow-btn" onClick={handleRightArrowClick}>
-          {">"}
-        </button>
-      </div>
+    <div className="container flex space-x-40 py-40">
+        <div className="flex">
+          <button className="arrow-btn" onClick={handleLeftArrowClick}>
+            <FontAwesomeIcon
+              icon={faChevronCircleLeft}
+              className={`${buttonColor}`}
+            />
+          </button>
+          <img
+            className="object-contain"
+            src={images[currentImageIndex]}
+            alt={`Image ${currentImageIndex}`}
+          />
+          <button className="arrow-btn" onClick={handleRightArrowClick}>
+            <FontAwesomeIcon
+              icon={faChevronCircleRight}
+              className={`${buttonColor}`}
+            />
+          </button>
+        </div>
 
       <div className="">
         <h1 className={`font-bold text-5xl  ${textColorClass}`}>
