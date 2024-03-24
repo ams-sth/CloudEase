@@ -18,17 +18,18 @@ const Features = ({ pageColor, greenColor, darkColor }) => {
         Provide Tools and Expertise to Effectively Manage Cloud Environments
       </h1>
 
-      <span className="flex justify-center py-5">
+      <div className="flex justify-center py-5">
         <p className={`max-w-2xl text-center ${textColorClass}`}>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi architecto.
         </p>
-      </span>
+      </div>
 
       <nav className="col-span-3 md:col-span-2">
         <ul className="grid grid-cols-1 md:grid-cols-3 border-b border-gray-400">
           <li className="relative px-8 py-10 hover:bg-gray-300">
+            <img src="/images/Investment.png" />
             <a href="#" className={`text-xl font-semibold ${textColorClass}`}>
               Cost Optimization
             </a>
@@ -39,6 +40,8 @@ const Features = ({ pageColor, greenColor, darkColor }) => {
             <div className="absolute top-0 right-0 h-full border-r border-gray-400"></div>
           </li>
           <li className="relative px-8 py-10 hover:bg-gray-300">
+            <img src="/images/Protection.png" />
+
             <a href="#" className={`text-xl font-semibold ${textColorClass} `}>
               Enhanced Security
             </a>
@@ -49,6 +52,8 @@ const Features = ({ pageColor, greenColor, darkColor }) => {
             <div className="absolute top-0 right-0 h-full border-r border-gray-400"></div>
           </li>
           <li className="relative px-8 py-10 hover:bg-gray-300">
+            <img src="/images/Encription.png" />
+
             <a href="#" className={`text-xl font-semibold ${textColorClass} `}>
               Streamlined Operations
             </a>
@@ -62,6 +67,8 @@ const Features = ({ pageColor, greenColor, darkColor }) => {
       <nav className="col-span-3 md:col-span-2 ">
         <ul className="grid grid-cols-1 md:grid-cols-3">
           <li className="relative px-8 py-10 hover:bg-gray-300">
+            <img src="/images/Velocity.png" />
+
             <a href="#" className={`text-xl font-semibold ${textColorClass} `}>
               Performance and Reliability
             </a>
@@ -72,6 +79,8 @@ const Features = ({ pageColor, greenColor, darkColor }) => {
             <div className="absolute top-0 right-0 h-full border-r border-gray-400"></div>
           </li>
           <li className="relative px-8 py-10 hover:bg-gray-300">
+            <img src="/images/Big-Data.png" />
+
             <a href="#" className={`text-xl font-semibold ${textColorClass} `}>
               Scalability and Flexibility
             </a>
@@ -82,6 +91,8 @@ const Features = ({ pageColor, greenColor, darkColor }) => {
             <div className="absolute top-0 right-0 h-full border-r border-gray-400"></div>
           </li>
           <li className="relative px-8 py-10 hover:bg-gray-300">
+            <img src="/images/Mantenance-Data-Cloud-Server.png" />
+
             <a href="#" className={`text-xl font-semibold ${textColorClass} `}>
               Monitoring and Support
             </a>

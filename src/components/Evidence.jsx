@@ -16,23 +16,23 @@ const Evidence = ({ pageColor, darkColor, greenColor }) => {
   return (
     <div className="container flex justify-between">
       <div className="relative">
-        <img
+        {/* <img
           src="/images/line.png"
           className="absolute inset-0   object-cover"
           alt="Background"
-        />
-        <div className="flex justify-center">
-          <div className={`border-2 border-black ${borderColor}`}>
+        /> */}
+        <div className="flex justify-center ">
+          <div className={`border-2 border-black ${borderColor} py-10 px-10`}>
             <h1 className={`text-center ${textColorClass}`}>99%</h1>
             <h1 className={`${textColorClass}`}>Uptime Guarantee</h1>
           </div>
         </div>
-        <div className="flex space-x-10 py-10">
-          <div className={`border-2 border-black ${borderColor}`}>
+        <div className="flex space-x-10 py-10 px-10">
+          <div className={`border-2 border-black ${borderColor} py-10`}>
             <h1 className={`text-center ${textColorClass}`}>50%</h1>
             <h1 className={`${textColorClass}`}>Cost Reduction</h1>
           </div>
-          <div className={`border-2 border-black ${borderColor}`}>
+          <div className={`border-2 border-black ${borderColor} py-10 `}>
             <h1 className={`text-center ${textColorClass}`}>95%</h1>
             <h1 className={`${textColorClass}`}>Customer Satisfaction</h1>
           </div>
