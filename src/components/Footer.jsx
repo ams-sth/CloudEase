@@ -11,7 +11,7 @@ const Footer = ({ pageColor, darkColor, greenColor }) => {
       ? "border-2 border-white"
       : "border-2 border-black";
   return (
-    <div className=" container flex border-t-2 p-8 mt-20">
+    <div className=" container flex border-t-2 p-8">
       <div className="flex-grow">
         <h1 className={`${textColorClass}`}>
           Copyright © 2023 Jegtheme. All rights reserved.
