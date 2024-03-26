@@ -6,19 +6,18 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
-  const borderColor =
+
+  const headingColor =
     pageColor === greenColor || pageColor === darkColor
-      ? "border-2 border-white"
-      : "border-2 border-black";
-  const bottomBorderColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "border-b border-white"
-      : "border-b border-gray-900";
+      ? "text-[#A3EFE8]"
+      : "text-black";
+
+
   return (
     <div className="container py-40">
       <div className="flex justify-center">
         <div className="text-center">
-          <h1 className={`text-4xl font-semibold ${textColorClass}`}>
+          <h1 className={`text-4xl font-semibold ${headingColor}`}>
             Take A Look At Our Articles & Resources
           </h1>
           <p className={`max-w-lg mt-5 ${textColorClass}`}>
@@ -33,7 +32,7 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
           <h1 className={`mt-4 font-semibold ${textColorClass}`}>
             June 8, 2023
           </h1>
-          <h1 className={`mt-2 font-semibold ${textColorClass}`}>
+          <h1 className={`mt-2 font-semibold ${headingColor}`}>
             Achieving Scalability and Resilience with Cloud Management
             Strategies
           </h1>
@@ -43,7 +42,7 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
           <h1 className={`mt-4 font-semibold ${textColorClass}`}>
             June 8, 2023
           </h1>
-          <h1 className={`mt-2 font-semibold ${textColorClass}`}>
+          <h1 className={`mt-2 font-semibold ${headingColor}`}>
             The Role of Cloud Management in Driving Business Efficiency
           </h1>
         </div>
@@ -52,7 +51,7 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
           <h1 className={`mt-4 font-semibold ${textColorClass}`}>
             June 8, 2023
           </h1>
-          <h1 className={`mt-2 font-semibold ${textColorClass}`}>
+          <h1 className={`mt-2 font-semibold ${headingColor}`}>
             Securing Your Cloud Environment: Best Practices for Data Protection
           </h1>
         </div>

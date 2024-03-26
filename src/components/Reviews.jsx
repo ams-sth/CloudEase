@@ -9,96 +9,154 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
       ? "text-white"
       : "text-black";
 
+  const headingColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "text-[#A3EFE8]"
+      : "text-black";
+
   const stars = Array.from({ length: 5 }).map((_, index) => (
     <FontAwesomeIcon key={index} icon={faStar} style={{ color: "orange" }} />
   ));
 
+  // var settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  // };
   return (
-    <div>
-      <div className="flex py-20 justify-center">
-        <h1 className={`text-3xl font-bold ${textColorClass}`}>
+    <div className="mt-40">
+      <div className="flex justify-center">
+        <h1 className={`text-3xl font-bold ${headingColor}`}>
           Client Reviews and Feedback
         </h1>
       </div>
-      <div className=" mt flex space-x-5 ">
-        <div className="border-4 max-w-xs border-gray-400">
-          <p className={`max-w-xs ${textColorClass}`}>
-            "Cloudsion consulting services helped us strategize and implement
-            the right cloud solutions, resulting in enhanced agility and
-            efficiency. Their team was responsive, knowledgeable, and delivered
-            beyond our expectations."
-          </p>
-          {stars}
+      <div className="grid grid-cols-3 px-5 gap-5">
+        {/* <Slider {...settings}> */}
+        <div className=" mt-10 border-2 rounded-xl px-8 py-8 border-gray-400">
           <div className="flex">
             <FontAwesomeIcon
               icon={faSquare}
               size="6x"
-              style={{ color: "white", border: "2px solid blak" }}
+              style={{ color: "white" }}
             />
-            <div>
+            <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>Sarah Johnson</h1>
               <h1 className={`${textColorClass}`}>Marketing Director</h1>
             </div>
           </div>
-        </div>
-        <div className="border-4 max-w-xs border-gray-400">
-          <p className={`max-w-xs ${textColorClass}`}>
-            "Cloudsion team helped us seamlessly migrate our infrastructure to
-            the cloud, improving scalability and reducing costs. Their expertise
-            and support have been exceptional, and we highly recommend their
-            cloud solutions."
-          </p>
           {stars}
+          <p className={`${textColorClass}`}>
+            "CloudEase consulting services helped us strategize and implement
+            the right cloud solutions, resulting in enhanced agility and
+            efficiency. Their team was responsive, knowledgeable, and delivered
+            beyond our expectations."
+          </p>
+        </div>
+        <div className=" mt-10 border-2  rounded-xl px-8 py-8 border-gray-400">
           <div className="flex">
             <FontAwesomeIcon
               icon={faSquare}
               size="6x"
-              style={{ color: "white", border: "2px solid blak" }}
+              style={{ color: "white" }}
             />
-            <div>
+            <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>John Smith</h1>
               <h1 className={`${textColorClass}`}>IT Manager</h1>
             </div>
           </div>
-        </div>
-        <div className="border-4 max-w-xs border-gray-400">
-          <p className={`max-w-xs ${textColorClass}`}>
-            "Cloudsion has been an invaluable partner in our digital
-            transformation journey. Their managed services have ensured our
-            cloud environment operates smoothly, securely, and optimally."
-          </p>
           {stars}
+          <p className={`black ${textColorClass} `}>
+            "CloudEase team helped us seamlessly migrate our infrastructure to
+            the cloud, improving scalability and reducing costs. Their expertise
+            and support have been exceptional, and we highly recommend their
+            cloud solutions."
+          </p>
+        </div>
+        <div className=" mt-10 border-2 rounded-xl px-8 py-8 border-gray-400">
           <div className="flex">
             <FontAwesomeIcon
               icon={faSquare}
               size="6x"
-              style={{ color: "white", border: "2px solid blak" }}
+              style={{ color: "white" }}
             />
-            <div>
+
+            <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>Robert Johnson</h1>
               <h1 className={`${textColorClass}`}>IT Director</h1>
             </div>
           </div>
-        </div>
-        <div className="border-4 max-w-xs border-gray-400">
-          <p className={`max-w-xs ${textColorClass}`}>
-            "Choosing Cloudsion for our cloud migration was the best decision we
-            made. Their team took care of every aspect, ensuring a seamless
-            transition with minimal disruption."
-          </p>
           {stars}
+
+          <p className={`black ${textColorClass}`}>
+            "CloudEase has been an invaluable partner in our digital
+            transformation journey. Their managed services have ensured our
+            cloud environment operates smoothly, securely, and optimally."
+          </p>
+        </div>
+        <div className="mt-10 border-2 rounded-xl px-8 py-8 border-gray-400">
           <div className="flex">
             <FontAwesomeIcon
               icon={faSquare}
               size="6x"
-              style={{ color: "white", border: "2px solid blak" }}
+              style={{ color: "white" }}
             />
-            <div>
+            <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>Emma Davis</h1>
               <h1 className={`${textColorClass}`}>Director of Operations</h1>
             </div>
           </div>
+          {stars}
+
+          <p className={`black ${textColorClass}`}>
+            "Choosing CloudEase for our cloud migration was the best decision we
+            made. Their team took care of every aspect, ensuring a seamless
+            transition with minimal disruption."
+          </p>
         </div>
+        <div className="mt-10 border-2 rounded-xl px-8 py-8 border-gray-400 ">
+          <div className="flex">
+            <FontAwesomeIcon
+              icon={faSquare}
+              size="6x"
+              style={{ color: "white" }}
+            />
+            <div className="mt-8 pl-4">
+              <h1 className={`${textColorClass}`}>Lisa Andersson</h1>
+              <h1 className={`${textColorClass}`}>Operations Manager</h1>
+            </div>
+          </div>
+          {stars}
+
+          <p className={`black ${textColorClass}`}>
+            "We couldn't be happier with the cloud deployment services by
+            CloudEase. They helped us set up a robust cloud infrastructure that
+            meets our growing needs."
+          </p>
+        </div>
+        <div className="mt-10 border-2 rounded-xl px-8 py-8 border-gray-400 ">
+          <div className="flex">
+            <FontAwesomeIcon
+              icon={faSquare}
+              size="6x"
+              style={{ color: "white" }}
+            />
+            <div className="mt-8 pl-4">
+              <h1 className={`${textColorClass}`}>David Wilson</h1>
+              <h1 className={`${textColorClass}`}>Director Operations</h1>
+            </div>
+          </div>
+          {stars}
+
+          <p className={`black ${textColorClass}`}>
+            "CloudEase's cloud solutions have revolutionized our business
+            operations. Their platform-as-a-service (PaaS) offering has enabled
+            us to accelerate application development and deployment, saving us
+            significant time and resources."
+          </p>
+        </div>
+        {/* </Slider> */}
       </div>
     </div>
   );

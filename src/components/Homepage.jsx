@@ -6,12 +6,18 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
+
+  const headingColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "text-[#A3EFE8]"
+      : "text-black";
+
   const borderColor =
     pageColor === greenColor || pageColor === darkColor
       ? "border-2 border-white"
       : "border-2 border-black";
 
-  const [words, setWords] = useState([
+  const [words] = useState([
     "Efficiency",
     "Scalability",
     "Innovation",
@@ -22,7 +28,7 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [words.length]);
 
@@ -30,7 +36,7 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
     <div className={`container flex py-40  ${textColorClass}`}>
       <div className="max-w-xl overflow-hidden">
         <div className="animate-scrolling-text">
-          <h1 className="text-3xl font-bold">
+          <h1 className={`text-5xl font-bold ${headingColor}`}>
             Elevate Your Cloud Management for Enhanced {words[currentWordIndex]}
           </h1>
         </div>
@@ -40,7 +46,7 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
           blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
           et quas. Nemo enim ipsam voluptatem.
         </p>
-        <div className="flex">
+        <div className="flex mt-10">
           <input
             className={`h-12 ${borderColor}`}
             type="email"
@@ -52,7 +58,7 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
             Subscribe
           </button>
         </div>
-        <div className="py-40">
+        <div className="pt-40">
           <h1>Trusted by lots of companies: </h1>
           <nav>
             <ul className={`flex space-x-4  ${textColorClass}`}>

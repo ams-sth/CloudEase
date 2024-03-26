@@ -7,6 +7,22 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
+
+  const headingColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "text-[#A3EFE8]"
+      : "text-black";
+
+  const hoverColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "hover:bg-[#144647]"
+      : "hover:bg-gray-100";
+
+  const sectionColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "bg-[#143337]"
+      : "bg-white";
+
   const borderColor =
     pageColor === greenColor || pageColor === darkColor
       ? "border-2 border-white"
@@ -15,7 +31,7 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
   return (
     <div className="container flex py-40">
       <div>
-        <h1 className={`font-bold text-3xl max-w-2xl ${textColorClass}`}>
+        <h1 className={`font-bold text-3xl max-w-2xl ${headingColor}`}>
           Choose Your Ideal Pricing Plan for Effective Cloud Management
         </h1>
         <ul className="flex space-x-10 mt-5">
@@ -33,7 +49,9 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
           </li>
         </ul>
         <div className="flex space-x-8">
-          <section className={`rounded-md mt-10 ${borderColor} max-w-sm`}>
+          <section
+            className={`rounded-md mt-10 ${borderColor}  max-w-sm ${sectionColor} ${hoverColor}`}
+          >
             <div className="p-8">
               <h1 className={`text-3xl mt-4 ${textColorClass}`}>Basic Plan</h1>
               <div className="flex ">
@@ -75,7 +93,9 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
               </div>
             </div>
           </section>
-          <section className={`rounded-md mt-10 ${borderColor} max-w-sm`}>
+          <section
+            className={`rounded-md mt-10 ${borderColor}  max-w-sm ${sectionColor} ${hoverColor}`}
+          >
             <div className="p-8">
               <h1 className={`text-3xl mt-4 ${textColorClass}`}>Pro Plan</h1>
               <div className="flex ">
@@ -117,7 +137,9 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
               </div>
             </div>
           </section>
-          <section className={`rounded-md mt-10 ${borderColor} max-w-sm`}>
+          <section
+            className={`rounded-md mt-10 ${borderColor} max-w-sm ${sectionColor} ${hoverColor} `}
+          >
             <div className="p-8">
               <h1 className={`text-3xl mt-4 ${textColorClass}`}>
                 Enterprise Plan

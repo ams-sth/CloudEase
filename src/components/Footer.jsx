@@ -6,10 +6,7 @@ const Footer = ({ pageColor, darkColor, greenColor }) => {
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
-  const borderColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "border-2 border-white"
-      : "border-2 border-black";
+
   return (
     <div className=" container flex border-t-2 p-8">
       <div className="flex-grow">

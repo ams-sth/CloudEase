@@ -2,16 +2,22 @@ import React from "react";
 import { connect } from "react-redux";
 
 const Subscription = ({ pageColor, greenColor, darkColor }) => {
+
   const textColorClass =
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
+      : "text-black";
+
+  const headingColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "text-[#A3EFE8]"
       : "text-black";
 
   return (
     <div className="container border">
       <div className="flex justify-center py-10">
         <h1
-          className={`max-w-xl text-3xl font-semibold text-center ${textColorClass} `}
+          className={`max-w-xl text-3xl font-semibold text-center ${headingColor} `}
         >
           Get Started with Our Powerful Cloud Management Service Today
         </h1>

@@ -2,23 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 
 const About = ({ pageColor, greenColor, darkColor }) => {
+
   const textColorClass =
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
-  const borderColor =
+
+  const headingColor =
     pageColor === greenColor || pageColor === darkColor
-      ? "border-2 border-white"
-      : "border-2 border-black";
-  const bottomBorderColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "border-b border-white"
-      : "border-b border-gray-900";
+      ? "text-[#A3EFE8]"
+      : "text-black";
 
   return (
     <div className="container flex py-40">
       <div className="flex-grow">
-        <h1 className={`text-3xl ${textColorClass}`}>Navigation</h1>
+        <h1 className={`text-3xl ${headingColor}`}>Navigation</h1>
         <ul className="">
           <li className={`${textColorClass}`}>Home</li>
           <li className={`${textColorClass}`}>About</li>
@@ -27,7 +25,7 @@ const About = ({ pageColor, greenColor, darkColor }) => {
         </ul>
       </div>
       <div className="flex-grow">
-        <h1 className={`text-3xl ${textColorClass}`}>Support</h1>
+        <h1 className={`text-3xl ${headingColor}`}>Support</h1>
         <ul>
           <li className={`${textColorClass}`}>Contact</li>
           <li className={`${textColorClass}`}>Support</li>
@@ -36,7 +34,7 @@ const About = ({ pageColor, greenColor, darkColor }) => {
         </ul>
       </div>
       <div className="flex-grow">
-        <h1 className={`text-3xl ${textColorClass}`}>Social Media</h1>
+        <h1 className={`text-3xl ${headingColor}`}>Social Media</h1>
         <ul>
           <li className={`${textColorClass}`}>Twitter</li>
           <li className={`${textColorClass}`}>Facebook</li>
@@ -45,7 +43,7 @@ const About = ({ pageColor, greenColor, darkColor }) => {
         </ul>
       </div>
       <div className=" flex-grow">
-        <h1 className={`text-3xl ${textColorClass}`}>Contact Info</h1>
+        <h1 className={`text-3xl ${headingColor}`}>Contact Info</h1>
         <ul>
           <li className={`max-w-xs ${textColorClass}`}>
             Jl. Danau Tamblingan No.180, Sanur,

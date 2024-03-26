@@ -7,6 +7,11 @@ const Management = ({ pageColor, greenColor, darkColor }) => {
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
+
+  const headingColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "text-[#A3EFE8]"
+      : "text-black";
   const borderColor =
     pageColor === greenColor || pageColor === darkColor
       ? "border border-white"
@@ -17,9 +22,9 @@ const Management = ({ pageColor, greenColor, darkColor }) => {
       : "bg-blue-900";
 
   return (
-    <div className="container flex">
+    <div className="container flex mt-40">
       <div className="max-w-xl">
-        <h1 className={`font-bold text-5xl ${textColorClass}`}>
+        <h1 className={`font-bold text-5xl ${headingColor}`}>
           Management and Operations Capabilities to Analyze Cloud Cost
         </h1>
         <p className={`mt-5 ${textColorClass}`}>

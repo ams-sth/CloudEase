@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { changeImage } from "../app/actions";
+import { Carousel, IconButton, button } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronCircleLeft,
@@ -13,61 +14,59 @@ const images = [
   "/images/Total-238.png",
 ];
 
-const Analytics = ({
-  pageColor,
-  darkColor,
-  greenColor,
-  currentImageIndex,
-  changeImage,
-}) => {
+const Analytics = ({ pageColor, darkColor, greenColor }) => {
   const textColorClass =
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
-  const borderColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "border-2 border-white"
-      : "border-2 border-black";
-  const buttonColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-white"
-      : "text-black-500";
 
-  const handleLeftArrowClick = () => {
-    const newIndex =
-      currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
-    changeImage(newIndex);
-  };
-  const handleRightArrowClick = () => {
-    const newIndex =
-      currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
-    changeImage(newIndex);
-  };
+  const headingColor =
+    pageColor === greenColor || pageColor === darkColor
+      ? "text-[#A3EFE8]"
+      : "text-black";
+      
+  const buttonColor =
+    pageColor === greenColor || pageColor === darkColor ? "white" : "black";
 
   return (
-    <div className="container flex space-x-40 py-40">
-        <div className="flex">
-          <button className="arrow-btn" onClick={handleLeftArrowClick}>
-            <FontAwesomeIcon
-              icon={faChevronCircleLeft}
-              className={`${buttonColor}`}
-            />
-          </button>
-          <img
-            className="object-contain"
-            src={images[currentImageIndex]}
-            alt={`Image ${currentImageIndex}`}
-          />
-          <button className="arrow-btn" onClick={handleRightArrowClick}>
-            <FontAwesomeIcon
-              icon={faChevronCircleRight}
-              className={`${buttonColor}`}
-            />
-          </button>
-        </div>
+    <div className="container flex gap-10 mt-40">
+      <div className="flex">
+        <Carousel
+          prevArrow={({ handlePrev }) => (
+            <IconButton
+              color={buttonColor}
+              size="sm"
+              onClick={handlePrev}
+              className="!absolute top-2/4 -left-0 -translate-y-2/4"
+            >
+              <FontAwesomeIcon icon={faChevronCircleLeft} size="2xl" />
+            </IconButton>
+          )}
+          nextArrow={({ handleNext }) => (
+            <IconButton
+              color={buttonColor}
+              size="sm"
+              onClick={handleNext}
+              className="!absolute top-2/4 right-4 -translate-y-2/4"
+            >
+              <FontAwesomeIcon icon={faChevronCircleRight} size="2xl" />
+            </IconButton>
+          )}
+        >
+          {images.map((image, index) => (
+            <div key={index}>
+              <img
+                className="object-scale-down"
+                src={image}
+                alt={`Image ${index}`}
+              />
+            </div>
+          ))}
+        </Carousel>
+      </div>
 
-      <div className="">
-        <h1 className={`font-bold text-5xl  ${textColorClass}`}>
+      <div>
+        <h1 className={`font-bold text-5xl ${headingColor}`}>
           Improve Efficiency of Resource Utilization and Unify Visibility
         </h1>
 
