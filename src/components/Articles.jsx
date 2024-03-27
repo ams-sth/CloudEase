@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import { connect } from "react-redux";
 
@@ -65,9 +66,9 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
 
 const mapStateToProps = (state) => {
   return {
-    pageColor: state.pageColor,
-    greenColor: state.greenColor,
-    darkColor: state.darkColor,
+    pageColor: state.theme.pageColor,
+    greenColor: state.theme.greenColor,
+    darkColor: state.theme.darkColor,
   };
 };
 

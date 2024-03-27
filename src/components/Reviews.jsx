@@ -187,9 +187,9 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
 
 const mapStateToProps = (state) => {
   return {
-    pageColor: state.pageColor,
-    greenColor: state.greenColor,
-    darkColor: state.darkColor,
+    pageColor: state.theme.pageColor,
+    greenColor: state.theme.greenColor,
+    darkColor: state.theme.darkColor,
   };
 };
 export default connect(mapStateToProps)(Reviews);

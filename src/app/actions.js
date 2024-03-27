@@ -1,3 +1,4 @@
+//For Themes
 export const updateGreenColor = (color) => {
   return {
     type: "UPDATE_GREEN_COLOR",
@@ -24,7 +25,24 @@ export const changePageColor = (color) => {
   };
 };
 
+// For Image State
 export const changeImage = (index) => ({
   type: "CHANGE_IMAGE",
   payload: index,
+});
+
+//For Updating Counts
+export const updateCountTo99 = (duration) => ({
+  type: "UPDATE_COUNT_TO_99",
+  payload: duration,
+});
+
+export const updateCountTo95 = (duration) => ({
+  type: "UPDATE_COUNT_TO_95",
+  payload: duration,
+});
+
+export const updateCountTo50 = (duration) => ({
+  type: "UPDATE_COUNT_TO_50",
+  payload: duration,
 });

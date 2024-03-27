@@ -90,10 +90,11 @@ const Analytics = ({ pageColor, darkColor, greenColor }) => {
 
 const mapStateToProps = (state) => {
   return {
-    pageColor: state.pageColor,
-    darkColor: state.darkColor,
-    greenColor: state.greenColor,
-    currentImageIndex: state.currentImageIndex,
+    pageColor: state.theme.pageColor,
+    darkColor: state.theme.darkColor,
+    greenColor: state.theme.greenColor,
+    
+    currentImageIndex: state.image.currentImageIndex,
   };
 };
 

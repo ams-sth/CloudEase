@@ -57,31 +57,31 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
         </p>
         <div className="flex mt-10">
           <input
-            className={`h-12 ${borderColor}`}
+            className={`h-12 px-8 w-[22rem] ${borderColor}`}
             type="email"
             placeholder="Enter your email address"
           />
           <button
-            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold h-12 py-2 px-4 ml-2`}
+            className={`bg-blue-500 hover:scale-105 hover:duration-300 text-white font-bold h-12 py-2 px-4 ml-2`}
           >
             Subscribe
           </button>
         </div>
         <div className="pt-40">
           <h1>Trusted by lots of companies: </h1>
-          <nav>
+          <nav className="py-10">
             <ul className={`flex space-x-4 ${textColorClass}`}>
-              <li className={`text-xl ${headingColor} ${hoverColor}`}>
+              <li className={`text-xl ${headingColor} hover:animate-bounce`}>
                 <a href="#" className="font-bold">
                   SkyBridge
                 </a>
               </li>
-              <li className={`text-xl ${headingColor} ${hoverColor}`}>
+              <li className={`text-xl ${headingColor} hover:animate-bounce`}>
                 <a href="#" className="font-bold">
                   AgileWave
                 </a>
               </li>
-              <li className={`text-xl ${headingColor} ${hoverColor}`}>
+              <li className={`text-xl ${headingColor} hover:animate-bounce`}>
                 <a href="#" className="font-bold">
                   FutureFlow
                 </a>
@@ -99,9 +99,9 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
 
 const mapStateToProps = (state) => {
   return {
-    pageColor: state.pageColor,
-    greenColor: state.greenColor,
-    darkColor: state.darkColor,
+    pageColor: state.theme.pageColor,
+    greenColor: state.theme.greenColor,
+    darkColor: state.theme.darkColor,
   };
 };
 

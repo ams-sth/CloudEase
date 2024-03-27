@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { connect } from "react-redux";
 
@@ -6,11 +7,6 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
-
-  const borderColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "border-2 border-white"
-      : "border-2 border-black";
 
   const bottomBorderColor =
     pageColor === greenColor || pageColor === darkColor
@@ -37,7 +33,7 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
             </a>
           </li>
           <li>
-            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+            <a href="#" className={`hover:text-gray-300 ${textColorClass} `}>
               Service
             </a>
           </li>
@@ -52,12 +48,11 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
             </a>
           </li>
           <li>
-            <a
-              href="#"
-              className={`hover:text-gray-300 ${textColorClass} ${borderColor} px-2 py-2 rounded-lg`}
+            <button
+              className={`bg-gradient-to-r from-[#417BA5] to-[#37B1B4] hover:scale-105 hover:shadow-lg hover:shadow-cyan-400 text-white p-2 rounded-lg -translate-y-2`}
             >
               Get Started
-            </a>
+            </button>
           </li>
         </ul>
       </div>
@@ -67,9 +62,9 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
 
 const mapStateToProps = (state) => {
   return {
-    pageColor: state.pageColor,
-    greenColor: state.greenColor,
-    darkColor: state.darkColor,
+    pageColor: state.theme.pageColor,
+    greenColor: state.theme.greenColor,
+    darkColor: state.theme.darkColor,
   };
 };
 

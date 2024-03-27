@@ -59,9 +59,9 @@ const Management = ({ pageColor, greenColor, darkColor }) => {
 
 const mapStateToProps = (state) => {
   return {
-    pageColor: state.pageColor,
-    darkColor: state.darkColor,
-    greenColor: state.greenColor,
+    pageColor: state.theme.pageColor,
+    darkColor: state.theme.darkColor,
+    greenColor: state.theme.greenColor,
   };
 };
 

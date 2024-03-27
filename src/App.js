@@ -13,10 +13,27 @@ import About from "./components/About";
 import Evidence from "./components/Evidence";
 import Articles from "./components/Articles";
 import Subscription from "./components/Subscription";
-import { useEffect
- } from "react";
-const App = ({ pageColor, changePageColor, lightColor, greenColor, darkColor }) => {
+import { useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
+const App = ({
+  pageColor,
+  changePageColor,
+  lightColor,
+  greenColor,
+  darkColor,
+}) => {
+
+  const [evidenceRef, inView] = useInView({
+    threshold: 0.5, 
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // Play animation when Evidence component is in view
+      // Implement your animation logic here
+    }
+  }, [inView]);
   useEffect(() => {
     changePageColor(darkColor);
   }, [changePageColor, darkColor]);
@@ -61,10 +78,10 @@ const App = ({ pageColor, changePageColor, lightColor, greenColor, darkColor }) 
 
 const mapStateToProps = (state) => {
   return {
-    pageColor: state.pageColor ,
-    greenColor: state.greenColor,
-    darkColor: state.darkColor,
-    lightColor:state.lightColor
+    pageColor: state.theme.pageColor,
+    greenColor: state.theme.greenColor,
+    darkColor: state.theme.darkColor,
+    lightColor: state.theme.lightColor,
   };
 };
 
