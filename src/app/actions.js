@@ -10,6 +10,12 @@ export const updateDarkColor = (color) => {
     payload: color,
   };
 };
+export const updateLightColor = (color) => {
+  return {
+    type: "UPDATE_LIGHT_COLOR",
+    payload: color,
+  };
+};
 
 export const changePageColor = (color) => {
   return {

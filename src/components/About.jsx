@@ -2,16 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 
 const About = ({ pageColor, greenColor, darkColor }) => {
-
   const textColorClass =
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
 
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
+  let headingColor;
+  if (pageColor === greenColor) {
+    headingColor = "text-[#A3EFE8]";
+  } else if (pageColor === darkColor) {
+    headingColor = "text-[#6CB2EB]";
+  } else {
+    headingColor = "text-black";
+  }
 
   return (
     <div className="container flex py-40">
@@ -46,8 +49,7 @@ const About = ({ pageColor, greenColor, darkColor }) => {
         <h1 className={`text-3xl ${headingColor}`}>Contact Info</h1>
         <ul>
           <li className={`max-w-xs ${textColorClass}`}>
-            Jl. Danau Tamblingan No.180, Sanur,
-             Denpasar, Bali 80222
+            Jl. Danau Tamblingan No.180, Sanur, Denpasar, Bali 80222
           </li>
           <li className={`${textColorClass}`}>support@domain.com</li>
           <li className={`${textColorClass}`}>(+977)887110622814</li>

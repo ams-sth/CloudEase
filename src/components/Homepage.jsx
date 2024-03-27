@@ -7,21 +7,30 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
       ? "text-white"
       : "text-black";
 
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
+  let headingColor;
+  if (pageColor === greenColor) {
+    headingColor = "text-[#A3EFE8]";
+  } else if (pageColor === darkColor) {
+    headingColor = "text-[#6CB2EB]";
+  } else {
+    headingColor = "text-black";
+  }
+
+  let hoverColor;
+  if (pageColor === greenColor) {
+    hoverColor = "hover:text-[#144647]";
+  } else if (pageColor === darkColor) {
+    hoverColor = "hover:text-[#2C3842]";
+  } else {
+    hoverColor = "hover:text-gray-300";
+  }
 
   const borderColor =
     pageColor === greenColor || pageColor === darkColor
       ? "border-2 border-white"
       : "border-2 border-black";
 
-  const [words] = useState([
-    "Efficiency",
-    "Scalability",
-    "Innovation",
-  ]);
+  const [words] = useState(["Efficiency", "Scalability", "Innovation"]);
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
@@ -61,19 +70,19 @@ const Homepage = ({ pageColor, greenColor, darkColor }) => {
         <div className="pt-40">
           <h1>Trusted by lots of companies: </h1>
           <nav>
-            <ul className={`flex space-x-4  ${textColorClass}`}>
-              <li>
-                <a href="#" className="font-bold hover:text-gray-600">
+            <ul className={`flex space-x-4 ${textColorClass}`}>
+              <li className={`text-xl ${headingColor} ${hoverColor}`}>
+                <a href="#" className="font-bold">
                   SkyBridge
                 </a>
               </li>
-              <li>
-                <a href="#" className="font-bold hover:text-gray-600">
+              <li className={`text-xl ${headingColor} ${hoverColor}`}>
+                <a href="#" className="font-bold">
                   AgileWave
                 </a>
               </li>
-              <li>
-                <a href="#" className="font-bold hover:text-gray-600">
+              <li className={`text-xl ${headingColor} ${hoverColor}`}>
+                <a href="#" className="font-bold">
                   FutureFlow
                 </a>
               </li>

@@ -20,11 +20,15 @@ const Analytics = ({ pageColor, darkColor, greenColor }) => {
       ? "text-white"
       : "text-black";
 
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
-      
+  let headingColor;
+  if (pageColor === greenColor) {
+    headingColor = "text-[#A3EFE8]";
+  } else if (pageColor === darkColor) {
+    headingColor = "text-[#6CB2EB]";
+  } else {
+    headingColor = "text-black";
+  }
+
   const buttonColor =
     pageColor === greenColor || pageColor === darkColor ? "white" : "black";
 

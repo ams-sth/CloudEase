@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { connect } from "react-redux";
-import { faStar, faSquare } from "@fortawesome/free-solid-svg-icons";
+import { faStar} from "@fortawesome/free-solid-svg-icons";
 
 const Reviews = ({ pageColor, greenColor, darkColor }) => {
   const textColorClass =
@@ -9,10 +9,32 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
       ? "text-white"
       : "text-black";
 
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
+  let headingColor;
+  if (pageColor === greenColor) {
+    headingColor = "text-[#A3EFE8]";
+  } else if (pageColor === darkColor) {
+    headingColor = "text-[#6CB2EB]";
+  } else {
+    headingColor = "text-black";
+  }
+
+  let cardColor;
+  if (pageColor === greenColor) {
+    cardColor = "bg-[#174649]";
+  } else if (pageColor === darkColor) {
+    cardColor = "bg-[#36454F]";
+  } else {
+    cardColor = "bg-gray";
+  }
+
+  let borderColor;
+  if (pageColor === greenColor) {
+    borderColor = "border-[#31595B]";
+  } else if (pageColor === darkColor) {
+    borderColor = "border-[#36454F]";
+  } else {
+    borderColor = "border-black";
+  }
 
   const stars = Array.from({ length: 5 }).map((_, index) => (
     <FontAwesomeIcon key={index} icon={faStar} style={{ color: "orange" }} />
@@ -32,15 +54,16 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
           Client Reviews and Feedback
         </h1>
       </div>
-      <div className="grid grid-cols-3 px-5 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 px-5 gap-5">
         {/* <Slider {...settings}> */}
-        <div className=" mt-10 border-2 rounded-xl px-8 py-8 border-gray-400">
+        <div
+          className={`mt-10 border-2 rounded-xl px-8 py-8 ${borderColor} ${cardColor}`}
+        >
           <div className="flex">
-            <FontAwesomeIcon
-              icon={faSquare}
-              size="6x"
-              style={{ color: "white" }}
-            />
+            <div className="relative">
+              <img src="/images/SarahJohnson.jpg" alt="SarahJohnson" className="w-24 h-24" />
+            </div>
+
             <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>Sarah Johnson</h1>
               <h1 className={`${textColorClass}`}>Marketing Director</h1>
@@ -54,13 +77,13 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
             beyond our expectations."
           </p>
         </div>
-        <div className=" mt-10 border-2  rounded-xl px-8 py-8 border-gray-400">
+        <div
+          className={`mt-10 border-2 rounded-xl px-8 py-8 ${borderColor} ${cardColor}`}
+        >
           <div className="flex">
-            <FontAwesomeIcon
-              icon={faSquare}
-              size="6x"
-              style={{ color: "white" }}
-            />
+            <div className="relative">
+              <img src="/images/JohnSmith.jpg" alt="JohnSmith" className="w-24 h-24" />
+            </div>
             <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>John Smith</h1>
               <h1 className={`${textColorClass}`}>IT Manager</h1>
@@ -74,13 +97,13 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
             cloud solutions."
           </p>
         </div>
-        <div className=" mt-10 border-2 rounded-xl px-8 py-8 border-gray-400">
+        <div
+          className={`mt-10 border-2 rounded-xl px-8 py-8 ${borderColor} ${cardColor}`}
+        >
           <div className="flex">
-            <FontAwesomeIcon
-              icon={faSquare}
-              size="6x"
-              style={{ color: "white" }}
-            />
+            <div className="relative">
+              <img src="/images/RobertJohnson.jpg" alt="RobertJohnson" className="w-24 h-24" />
+            </div>
 
             <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>Robert Johnson</h1>
@@ -95,13 +118,13 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
             cloud environment operates smoothly, securely, and optimally."
           </p>
         </div>
-        <div className="mt-10 border-2 rounded-xl px-8 py-8 border-gray-400">
+        <div
+          className={`mt-10 border-2 rounded-xl px-8 py-8 ${borderColor} ${cardColor}`}
+        >
           <div className="flex">
-            <FontAwesomeIcon
-              icon={faSquare}
-              size="6x"
-              style={{ color: "white" }}
-            />
+          <div className="relative">
+              <img src="/images/EmmaDavis.jpg" alt="EmmaDavis" className="w-24 h-24" />
+            </div>
             <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>Emma Davis</h1>
               <h1 className={`${textColorClass}`}>Director of Operations</h1>
@@ -115,13 +138,13 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
             transition with minimal disruption."
           </p>
         </div>
-        <div className="mt-10 border-2 rounded-xl px-8 py-8 border-gray-400 ">
+        <div
+          className={`mt-10 border-2 rounded-xl px-8 py-8 ${borderColor} ${cardColor}`}
+        >
           <div className="flex">
-            <FontAwesomeIcon
-              icon={faSquare}
-              size="6x"
-              style={{ color: "white" }}
-            />
+          <div className="relative">
+              <img src="/images/LisaAnderson.jpg" alt="LisaAnderson" className="w-24 h-24" />
+            </div>
             <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>Lisa Andersson</h1>
               <h1 className={`${textColorClass}`}>Operations Manager</h1>
@@ -135,13 +158,13 @@ const Reviews = ({ pageColor, greenColor, darkColor }) => {
             meets our growing needs."
           </p>
         </div>
-        <div className="mt-10 border-2 rounded-xl px-8 py-8 border-gray-400 ">
+        <div
+          className={`mt-10 border-2 rounded-xl px-8 py-8 ${borderColor} ${cardColor}`}
+        >
           <div className="flex">
-            <FontAwesomeIcon
-              icon={faSquare}
-              size="6x"
-              style={{ color: "white" }}
-            />
+          <div className="relative">
+              <img src="/images/DavidWilson.jpg" alt="DavidWilson" className="w-24 h-24" />
+            </div>
             <div className="mt-8 pl-4">
               <h1 className={`${textColorClass}`}>David Wilson</h1>
               <h1 className={`${textColorClass}`}>Director Operations</h1>

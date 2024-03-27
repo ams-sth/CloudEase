@@ -13,8 +13,14 @@ import About from "./components/About";
 import Evidence from "./components/Evidence";
 import Articles from "./components/Articles";
 import Subscription from "./components/Subscription";
+import { useEffect
+ } from "react";
+const App = ({ pageColor, changePageColor, lightColor, greenColor, darkColor }) => {
 
-const App = ({ pageColor, changePageColor, greenColor, darkColor }) => {
+  useEffect(() => {
+    changePageColor(darkColor);
+  }, [changePageColor, darkColor]);
+
   return (
     <div style={{ backgroundColor: pageColor, minHeight: "100vh" }}>
       <NavigationBar />
@@ -32,7 +38,7 @@ const App = ({ pageColor, changePageColor, greenColor, darkColor }) => {
       <div className="fixed bottom-4 right-4">
         <button
           className="bg-white border-2 text-black px-4 py-2 rounded-lg"
-          onClick={() => changePageColor("white")}
+          onClick={() => changePageColor(lightColor)}
         >
           Light
         </button>
@@ -55,9 +61,10 @@ const App = ({ pageColor, changePageColor, greenColor, darkColor }) => {
 
 const mapStateToProps = (state) => {
   return {
-    pageColor: state.pageColor,
+    pageColor: state.pageColor ,
     greenColor: state.greenColor,
     darkColor: state.darkColor,
+    lightColor:state.lightColor
   };
 };
 

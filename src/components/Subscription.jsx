@@ -2,19 +2,17 @@ import React from "react";
 import { connect } from "react-redux";
 
 const Subscription = ({ pageColor, greenColor, darkColor }) => {
-
-  const textColorClass =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-white"
-      : "text-black";
-
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
+  let headingColor;
+  if (pageColor === greenColor) {
+    headingColor = "text-[#A3EFE8]";
+  } else if (pageColor === darkColor) {
+    headingColor = "text-[#6CB2EB]";
+  } else {
+    headingColor = "text-black";
+  }
 
   return (
-    <div className="container border">
+    <div className="container border mt-40">
       <div className="flex justify-center py-10">
         <h1
           className={`max-w-xl text-3xl font-semibold text-center ${headingColor} `}

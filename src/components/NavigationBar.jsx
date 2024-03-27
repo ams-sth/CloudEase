@@ -6,10 +6,12 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
+
   const borderColor =
     pageColor === greenColor || pageColor === darkColor
       ? "border-2 border-white"
       : "border-2 border-black";
+
   const bottomBorderColor =
     pageColor === greenColor || pageColor === darkColor
       ? "border-b border-white"

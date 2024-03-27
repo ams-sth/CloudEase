@@ -4,47 +4,61 @@ import { FaCheck } from "react-icons/fa";
 import { connect } from "react-redux";
 
 const Evidence = ({ pageColor, darkColor, greenColor }) => {
-
   const textColorClass =
     pageColor === greenColor || pageColor === darkColor
       ? "text-white"
       : "text-black";
 
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
+  let headingColor;
+  if (pageColor === greenColor) {
+    headingColor = "text-[#A3EFE8]";
+  } else if (pageColor === darkColor) {
+    headingColor = "text-[#6CB2EB]";
+  } else {
+    headingColor = "text-black";
+  }
 
-  const borderColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "border-2 border-white"
-      : "border-2 border-black";
+  // const borderColor =
+  //   pageColor === greenColor || pageColor === darkColor
+  //     ? "border-2 border-white"
+  //     : "border-2 border-black";
 
   return (
-    <div className="container mx-auto flex gap-16">
-      <div className="relative">
-        {/* <img
-          src="/images/line.png"
-          className="absolute inset-0   object-cover"
-          alt="Background"
-        /> */}
-        <div className="flex justify-center pt-10 ">
-          <div className={`w-48 border-2 border-black ${borderColor} py-10 px-10`}>
+    <div className="container flex gap-16">
+      {/* <div
+        className="relative inset-0 bg-contain"
+      >
+        <img src="/images/line.png"/>
+
+        <div className="absolute top-0 left-56 transform -translate-x-1/2">
+          <div
+            className={`w-48 border-2 border-black ${borderColor} py-10 px-10`}
+          >
             <h1 className={`text-center text-4xl ${textColorClass}`}>99%</h1>
-            <h1 className={`text-center ${textColorClass}`}>Uptime Guarantee</h1>
+            <h1 className={`text-center ${textColorClass}`}>
+              Uptime Guarantee
+            </h1>
           </div>
         </div>
-        <div className="flex gap-12 py-12 ">
-          <div className={`w-48 border-2 border-black ${borderColor} py-10 px-10`}>
+        <div className="absolute -bottom-16 transform translate-y-[50%]">
+          <div
+            className={`w-48 border-2 border-black ${borderColor} py-10 px-10`}
+          >
             <h1 className={`text-center text-4xl ${textColorClass}`}>50%</h1>
             <h1 className={`text-center ${textColorClass}`}>Cost Reduction</h1>
           </div>
-          <div className={`w-48 border-2 border-black ${borderColor} py-10 px-10`}>
+        </div>
+        <div className="absolute -bottom-16 left-36 transform translate-y-[50%] translate-x-[50%]">
+          <div
+            className={`w-48 border-2 border-black ${borderColor} py-10 px-10`}
+          >
             <h1 className={`text-center text-4xl ${textColorClass}`}>95%</h1>
-            <h1 className={`text-center ${textColorClass}`}>Customer Satisfaction</h1>
+            <h1 className={`text-center ${textColorClass}`}>
+              Customer Satisfaction
+            </h1>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex justify-end">
         <div>

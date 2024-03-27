@@ -8,21 +8,25 @@ const Management = ({ pageColor, greenColor, darkColor }) => {
       ? "text-white"
       : "text-black";
 
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
+  let headingColor;
+  if (pageColor === greenColor) {
+    headingColor = "text-[#A3EFE8]";
+  } else if (pageColor === darkColor) {
+    headingColor = "text-[#6CB2EB]";
+  } else {
+    headingColor = "text-black";
+  }
+
   const borderColor =
     pageColor === greenColor || pageColor === darkColor
       ? "border border-white"
       : "border border-black";
+
   const containerColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? ""
-      : "bg-blue-900";
+    pageColor === greenColor || pageColor === darkColor ? "" : "bg-blue-900";
 
   return (
-    <div className="container flex mt-40">
+    <div className="container flex gap-8 mt-40">
       <div className="max-w-xl">
         <h1 className={`font-bold text-5xl ${headingColor}`}>
           Management and Operations Capabilities to Analyze Cloud Cost
@@ -46,7 +50,7 @@ const Management = ({ pageColor, greenColor, darkColor }) => {
           </li>
         </ul>
       </div>
-      <div className={`${borderColor} ${containerColor}` }>
+      <div className={`${borderColor} ${containerColor}`}>
         <img className="object-fit" src="/images/Group-1544.png" />
       </div>
     </div>

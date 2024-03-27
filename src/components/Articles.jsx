@@ -7,14 +7,17 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
       ? "text-white"
       : "text-black";
 
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
-
+      let headingColor;
+      if (pageColor === greenColor) {
+        headingColor = "text-[#A3EFE8]";
+      } else if (pageColor === darkColor) {
+        headingColor = "text-[#6CB2EB]";
+      } else {
+        headingColor = "text-black";
+      }
 
   return (
-    <div className="container py-40">
+    <div className="container mt-40">
       <div className="flex justify-center">
         <div className="text-center">
           <h1 className={`text-4xl font-semibold ${headingColor}`}>
@@ -26,8 +29,8 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
           </p>
         </div>
       </div>
-      <div className="flex space-x-10 mt-10">
-        <div>
+      <div className="flex gap-10 mt-10">
+        <div className="hover:scale-105 transition duration-300 cursor-pointer">
           <img src="/images/securely-share-and-back-up-files-with-cloud-techno.jpg" />
           <h1 className={`mt-4 font-semibold ${textColorClass}`}>
             June 8, 2023
@@ -37,7 +40,7 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
             Strategies
           </h1>
         </div>
-        <div>
+        <div className="hover:scale-105 transition duration-300 cursor-pointer">
           <img src="/images/engineer-working-at-server-room-utc.jpg" />
           <h1 className={`mt-4 font-semibold ${textColorClass}`}>
             June 8, 2023
@@ -46,7 +49,7 @@ const Articles = ({ pageColor, greenColor, darkColor }) => {
             The Role of Cloud Management in Driving Business Efficiency
           </h1>
         </div>
-        <div>
+        <div className="hover:scale-105 transition duration-300 cursor-pointer">
           <img src="/images/program-code-and-online-cloud-database-on-computer-utc.jpg" />
           <h1 className={`mt-4 font-semibold ${textColorClass}`}>
             June 8, 2023

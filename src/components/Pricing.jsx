@@ -8,20 +8,32 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
       ? "text-white"
       : "text-black";
 
-  const headingColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-[#A3EFE8]"
-      : "text-black";
+  let headingColor;
+  if (pageColor === greenColor) {
+    headingColor = "text-[#A3EFE8]";
+  } else if (pageColor === darkColor) {
+    headingColor = "text-[#6CB2EB]";
+  } else {
+    headingColor = "text-black";
+  }
 
-  const hoverColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "hover:bg-[#144647]"
-      : "hover:bg-gray-100";
+  let sectionColor;
+  if (pageColor === greenColor) {
+    sectionColor = "bg-[#143337]";
+  } else if (pageColor === darkColor) {
+    sectionColor = "bg-[#1f2937]";
+  } else {
+    sectionColor = "bg-gray";
+  }
 
-  const sectionColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "bg-[#143337]"
-      : "bg-white";
+  let hoverColor;
+  if (pageColor === greenColor) {
+    hoverColor = "hover:bg-[#144647]";
+  } else if (pageColor === darkColor) {
+    hoverColor = "hover:bg-[#2C3842]";
+  } else {
+    hoverColor = "hover:bg-gray-300";
+  }
 
   const borderColor =
     pageColor === greenColor || pageColor === darkColor
@@ -48,7 +60,7 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
             Cancel Anytime
           </li>
         </ul>
-        <div className="flex space-x-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <section
             className={`rounded-md mt-10 ${borderColor}  max-w-sm ${sectionColor} ${hoverColor}`}
           >
@@ -82,7 +94,7 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
                 </li>
               </ul>
               <div className="flex mt-4 justify-center">
-                <button className="py-2 px-24 bg-blue-600 rounded-md text-white">
+                <button className="py-2 px-24 bg-blue-600 rounded-md hover:scale-105 duration-300 text-white">
                   Get Started
                 </button>
               </div>
@@ -126,7 +138,7 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
                 </li>
               </ul>
               <div className="flex mt-4 justify-center">
-                <button className="py-2 px-24 bg-blue-600 rounded-md text-white">
+                <button className="py-2 px-24 bg-blue-600 rounded-md hover:scale-105 duration-300 text-white">
                   Get Started
                 </button>
               </div>
@@ -172,7 +184,7 @@ const Pricing = ({ pageColor, darkColor, greenColor }) => {
                 </li>
               </ul>
               <div className="flex mt-4 justify-center">
-                <button className="py-2 px-24 bg-blue-600 rounded-md text-white">
+                <button className="py-2 px-24 bg-blue-600 rounded-md hover:scale-105 duration-300 text-white">
                   Get Started
                 </button>
               </div>
