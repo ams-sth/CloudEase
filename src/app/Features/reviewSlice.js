@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  testimonials: [
+  feedbacks: [
     {
       name: "Sarah Johnson",
       role: "Marketing Director",
@@ -60,5 +60,5 @@ const reviewSlice = createSlice({
   reducers: {},
 });
 
-export const selectReviews = (state) => state.reviews.testimonials;
+export const selectReviews = (state) => state.reviews.feedbacks;
 export default reviewSlice.reducer;

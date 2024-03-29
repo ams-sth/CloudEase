@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { selectReviews } from "../app/Features/reviewSlice";
 
 const Reviews = ({ colors }) => {
-  const testimonials = useSelector(selectReviews);
+  const feedbacks = useSelector(selectReviews);
 
   const stars = Array.from({ length: 5 }).map((_, index) => (
     <FontAwesomeIcon key={index} icon={faStar} style={{ color: "orange" }} />
@@ -21,8 +21,9 @@ const Reviews = ({ colors }) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
+    autoplaySpeed: 2000,
+    pauseonHover:true
+
   };
 
   return (
@@ -32,26 +33,26 @@ const Reviews = ({ colors }) => {
           Client Reviews and Feedback
         </h1>
       </div>
-      <Slider {...settings}>
-        {testimonials.map((testimonial, index) => (
+      <Slider  arrows={false} {...settings}>
+        {feedbacks.map((reviews, index) => (
           <div key={index}>
-            <div className={`w-[20rem] mt-10 border-2 rounded-xl p-8`}>
+            <div className={`${colors.hoverColor} w-[20rem] mt-10 border-2 rounded-xl p-8`}>
               <div>
                 <div className="flex">
                   <div className="relative">
                     <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
+                      src={reviews.image}
+                      alt={reviews.name}
                       className="w-24 h-24"
                     />
                   </div>
 
-                  <div className="translate-x-8">
+                  <div className="translate-x-4 -translate-y-2">
                     <h1 className={`${colors.textColor}`}>
-                      {testimonial.name}
+                      {reviews.name}
                     </h1>
                     <h1 className={`${colors.textColor}`}>
-                      {testimonial.role}
+                      {reviews.role}
                     </h1>
                   </div>
                 </div>
@@ -59,7 +60,7 @@ const Reviews = ({ colors }) => {
                 <div>
                   <div className="pt-2">{stars}</div>
                   <p className={`${colors.textColor} pt-2`}>
-                    {testimonial.comment}
+                    {reviews.comment}
                   </p>
                 </div>
               </div>
