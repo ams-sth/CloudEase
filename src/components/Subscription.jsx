@@ -1,21 +1,11 @@
 import React from "react";
-import { connect } from "react-redux";
 
-const Subscription = ({ pageColor, greenColor, darkColor }) => {
-  let headingColor;
-  if (pageColor === greenColor) {
-    headingColor = "text-[#A3EFE8]";
-  } else if (pageColor === darkColor) {
-    headingColor = "text-[#6CB2EB]";
-  } else {
-    headingColor = "text-black";
-  }
-
+const Subscription = ({ colors }) => {
   return (
     <div className="container border mt-40">
       <div className="flex justify-center py-10">
         <h1
-          className={`max-w-xl text-3xl font-semibold text-center ${headingColor} `}
+          className={`max-w-xl text-3xl font-semibold text-center ${colors.headingColor} `}
         >
           Get Started with Our Powerful Cloud Management Service Today
         </h1>
@@ -27,19 +17,12 @@ const Subscription = ({ pageColor, greenColor, darkColor }) => {
           type="email"
           placeholder="Enter Your e-mail address"
         />
-        <button className="border-2 bg-blue-500 text-white h-12 w-40">
+        <button className="rounded-lg bg-gradient-to-r from-[#417BA5] to-[#37B1B4] hover:scale-105 duration-300  text-white h-12 w-40">
           Subscribe
         </button>
       </div>
     </div>
   );
 };
-const mapStateToProps = (state) => {
-  return {
-    pageColor: state.theme.pageColor,
-    greenColor: state.theme.greenColor,
-    darkColor: state.theme.darkColor,
-  };
-};
 
-export default connect(mapStateToProps)(Subscription);
+export default Subscription;

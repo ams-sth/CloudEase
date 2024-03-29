@@ -1,49 +1,39 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { connect } from "react-redux";
 
-const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
-  const textColorClass =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-white"
-      : "text-black";
-
-  const bottomBorderColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "border-b border-white"
-      : "border-b border-gray-900";
+const NavigationBar = ({ colors }) => {
 
   return (
-    <nav className={`p-8 ${bottomBorderColor}`}>
+    <nav className={`p-8 border-b-2 border-white`}>
       <div className="container flex justify-between">
         <div className="flex-shrink">
-          <span className={`${textColorClass} font-bold text-xl`}>
+          <span className={`${colors.headingColor} font-bold text-xl`}>
             CloudEase
           </span>
         </div>
         <ul className="flex space-x-4">
           <li>
-            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+            <a href="#" className={`hover:text-gray-300 ${colors.textColor}`}>
               Home
             </a>
           </li>
           <li>
-            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+            <a href="#" className={`hover:text-gray-300 ${colors.textColor}`}>
               About
             </a>
           </li>
           <li>
-            <a href="#" className={`hover:text-gray-300 ${textColorClass} `}>
+            <a href="#" className={`hover:text-gray-300 ${colors.textColor} `}>
               Service
             </a>
           </li>
           <li>
-            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+            <a href="#" className={`hover:text-gray-300 ${colors.textColor}`}>
               Blogs
             </a>
           </li>
           <li>
-            <a href="#" className={`hover:text-gray-300 ${textColorClass}`}>
+            <a href="#" className={`hover:text-gray-300 ${colors.textColor}`}>
               Contact
             </a>
           </li>
@@ -60,12 +50,4 @@ const NavigationBar = ({ pageColor, greenColor, darkColor }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    pageColor: state.theme.pageColor,
-    greenColor: state.theme.greenColor,
-    darkColor: state.theme.darkColor,
-  };
-};
-
-export default connect(mapStateToProps)(NavigationBar);
+export default NavigationBar;

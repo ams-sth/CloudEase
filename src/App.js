@@ -3,71 +3,64 @@ import Analytics from "./components/Analytics";
 import Features from "./components/Features";
 import Homepage from "./components/Homepage";
 import NavigationBar from "./components/NavigationBar";
-import { changePageColor } from "./app/actions";
-import { connect } from "react-redux";
+import { setDarkColor, setGreenColor } from "./app/Features/themeSlice";
+import { useDispatch, useSelector } from "react-redux";
 import Management from "./components/Management";
-import Reviews from "./components/Reviews";
 import Pricing from "./components/Pricing";
 import Footer from "./components/Footer";
-import About from "./components/About";
 import Evidence from "./components/Evidence";
 import Articles from "./components/Articles";
 import Subscription from "./components/Subscription";
-import { useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
+import Reviews from "./components/Reviews";
+import getColors from "./components/color/colorUtilities";
 
-const App = ({
-  pageColor,
-  changePageColor,
-  lightColor,
-  greenColor,
-  darkColor,
-}) => {
+const App = () => {
+  const dispatch = useDispatch();
 
-  const [evidenceRef, inView] = useInView({
-    threshold: 0.5, 
-  });
+  const pageColor = useSelector((state) => state.theme.pageColor);
+  const colors = getColors(pageColor);
 
-  useEffect(() => {
-    if (inView) {
-      // Play animation when Evidence component is in view
-      // Implement your animation logic here
+  const handleColorChange = (color) => {
+    switch (color) {
+      case "green":
+        dispatch(setGreenColor());
+        break;
+      case "dark":
+        dispatch(setDarkColor());
+        break;
+      default:
+        break;
     }
-  }, [inView]);
-  useEffect(() => {
-    changePageColor(darkColor);
-  }, [changePageColor, darkColor]);
+  };
 
   return (
-    <div style={{ backgroundColor: pageColor, minHeight: "100vh" }}>
-      <NavigationBar />
-      <Homepage />
-      <Features />
-      <Analytics />
-      <Management />
-      <Reviews />
-      <Pricing />
-      <Evidence />
-      <Articles />
-      <Subscription />
-      <About />
-      <Footer />
+    <div
+      style={{
+        backgroundColor: pageColor === "green" ? "#07282c" : "#1f2937",
+      }}
+    >
+      <NavigationBar colors={colors} />
+      <Homepage colors={colors} />
+      <Features colors={colors} />
+      <Analytics colors={colors} />
+      <Management colors={colors} />
+      <Reviews colors={colors} />
+      <Pricing colors={colors} />
+      <Evidence colors={colors} />
+      <Articles colors={colors} />
+      <Subscription colors={colors} />
+      <Footer colors={colors} />
+
       <div className="fixed bottom-4 right-4">
         <button
-          className="bg-white border-2 text-black px-4 py-2 rounded-lg"
-          onClick={() => changePageColor(lightColor)}
-        >
-          Light
-        </button>
-        <button
-          className="bg-gray-900 text-white px-4 py-2 rounded-lg ml-2"
-          onClick={() => changePageColor(darkColor)}
+          className="bg-gray-800 text-white px-4 py-2 rounded-lg ml-2"
+          onClick={() => handleColorChange("dark")}
         >
           Dark
         </button>
         <button
           className="bg-green-700 text-white px-4 py-2 rounded-lg ml-2"
-          onClick={() => changePageColor(greenColor)}
+          onClick={() => handleColorChange("green")}
         >
           Green
         </button>
@@ -76,19 +69,4 @@ const App = ({
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    pageColor: state.theme.pageColor,
-    greenColor: state.theme.greenColor,
-    darkColor: state.theme.darkColor,
-    lightColor: state.theme.lightColor,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    changePageColor: (color) => dispatch(changePageColor(color)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

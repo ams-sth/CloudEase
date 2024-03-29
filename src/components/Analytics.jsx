@@ -1,7 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
-import { changeImage } from "../app/actions";
-import { Carousel, IconButton, button } from "@material-tailwind/react";
+import { Carousel, IconButton } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronCircleLeft,
@@ -14,23 +12,7 @@ const images = [
   "/images/Total-238.png",
 ];
 
-const Analytics = ({ pageColor, darkColor, greenColor }) => {
-  const textColorClass =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-white"
-      : "text-black";
-
-  let headingColor;
-  if (pageColor === greenColor) {
-    headingColor = "text-[#A3EFE8]";
-  } else if (pageColor === darkColor) {
-    headingColor = "text-[#6CB2EB]";
-  } else {
-    headingColor = "text-black";
-  }
-
-  const buttonColor =
-    pageColor === greenColor || pageColor === darkColor ? "white" : "black";
+const Analytics = ({colors}) => {
 
   return (
     <div className="container flex gap-10 mt-40">
@@ -38,7 +20,7 @@ const Analytics = ({ pageColor, darkColor, greenColor }) => {
         <Carousel
           prevArrow={({ handlePrev }) => (
             <IconButton
-              color={buttonColor}
+              color={colors.buttonColor}
               size="sm"
               onClick={handlePrev}
               className="!absolute top-2/4 -left-0 -translate-y-2/4"
@@ -48,7 +30,7 @@ const Analytics = ({ pageColor, darkColor, greenColor }) => {
           )}
           nextArrow={({ handleNext }) => (
             <IconButton
-              color={buttonColor}
+              color={colors.buttonColor}
               size="sm"
               onClick={handleNext}
               className="!absolute top-2/4 right-4 -translate-y-2/4"
@@ -70,17 +52,17 @@ const Analytics = ({ pageColor, darkColor, greenColor }) => {
       </div>
 
       <div>
-        <h1 className={`font-bold text-5xl ${headingColor}`}>
+        <h1 className={`font-bold text-5xl ${colors.headingColor}`}>
           Improve Efficiency of Resource Utilization and Unify Visibility
         </h1>
 
-        <p className={`mt-5 ${textColorClass}`}>
+        <p className={`mt-5 ${colors.textColor}`}>
           Eget mi proin sed libero enim sed faucibus viverrate maecenas accumsan
           lacus vel facilisis volutpat viverra maecenas accumsan it incididunt
           ut labore et dolore mag aliqu ut enim ad minim veniam quis nostrum
           exercitationem.
         </p>
-        <button className="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold h-10 py-2 px-4">
+        <button className="mt-5 rounded-lg bg-gradient-to-r from-[#417BA5] to-[#37B1B4] hover:scale-105 duration-300 text-white font-bold h-10 py-2 px-4">
           Learn More
         </button>
       </div>
@@ -88,18 +70,4 @@ const Analytics = ({ pageColor, darkColor, greenColor }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    pageColor: state.theme.pageColor,
-    darkColor: state.theme.darkColor,
-    greenColor: state.theme.greenColor,
-    
-    currentImageIndex: state.image.currentImageIndex,
-  };
-};
-
-const mapDispatchToProps = {
-  changeImage,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Analytics);
+export default Analytics;

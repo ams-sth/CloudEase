@@ -1,37 +1,14 @@
 import React from "react";
-import { connect } from "react-redux";
 import { FaCheckCircle } from "react-icons/fa";
 
-const Management = ({ pageColor, greenColor, darkColor }) => {
-  const textColorClass =
-    pageColor === greenColor || pageColor === darkColor
-      ? "text-white"
-      : "text-black";
-
-  let headingColor;
-  if (pageColor === greenColor) {
-    headingColor = "text-[#A3EFE8]";
-  } else if (pageColor === darkColor) {
-    headingColor = "text-[#6CB2EB]";
-  } else {
-    headingColor = "text-black";
-  }
-
-  const borderColor =
-    pageColor === greenColor || pageColor === darkColor
-      ? "border border-white"
-      : "border border-black";
-
-  const containerColor =
-    pageColor === greenColor || pageColor === darkColor ? "" : "bg-blue-900";
-
+const Management = ({colors}) => {
   return (
     <div className="container flex gap-8 mt-40">
       <div className="max-w-xl">
-        <h1 className={`font-bold text-5xl ${headingColor}`}>
+        <h1 className={`font-bold text-5xl ${colors.headingColor}`}>
           Management and Operations Capabilities to Analyze Cloud Cost
         </h1>
-        <p className={`mt-5 ${textColorClass}`}>
+        <p className={`mt-5 ${colors.textColor}`}>
           Luctus ac feugiat in sed ultrices donec vitae. Velit, amet, eget leo
           non sit ipsum venenatis eros, mi. Tempus morbi nunc placerat risus
           fames ac integer non nam. Vitae, metus pharetra sit nibh donec nunc,
@@ -39,30 +16,22 @@ const Management = ({ pageColor, greenColor, darkColor }) => {
         </p>
         <ul>
           <li>
-            <h6 className={`mt-5 ${textColorClass}`}>
+            <h6 className={`mt-5 ${colors.textColor}`}>
               <FaCheckCircle className="inline-block mr-2" />
               Efficiently allocate and track cloud costs
             </h6>
-            <h6 className={`mt-5 ${textColorClass}`}>
+            <h6 className={`mt-5 ${colors.textColor}`}>
               <FaCheckCircle className="inline-block mr-2" />
               Real-time cost monitoring and reporting
             </h6>
           </li>
         </ul>
       </div>
-      <div className={`${borderColor} ${containerColor}`}>
+      <div className={`${colors.borderColor}`}>
         <img className="object-fit" src="/images/Group-1544.png" />
       </div>
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    pageColor: state.theme.pageColor,
-    darkColor: state.theme.darkColor,
-    greenColor: state.theme.greenColor,
-  };
-};
-
-export default connect(mapStateToProps)(Management);
+export default Management;
