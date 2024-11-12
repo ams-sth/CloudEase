@@ -1,5 +1,3 @@
-import React from "react";
-
 const Subscription = ({ colors }) => {
   return (
     <div className="container border mt-40">

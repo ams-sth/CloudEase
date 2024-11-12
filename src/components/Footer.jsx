@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = ({ colors }) => {
   return (
     <div className="container py-40">

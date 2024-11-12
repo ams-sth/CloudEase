@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React from "react";
-import { useSelector } from "react-redux";
-
 const Articles = ({colors}) => {
 
   return (
